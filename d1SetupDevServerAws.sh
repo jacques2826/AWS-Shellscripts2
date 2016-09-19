@@ -49,7 +49,7 @@ echo '---- INSTALLING JAVA 8 COMPILER'
 # if using oracle install it asks some interactive questions -- not sure how to automate them
 # back to using openjdk version for now
 apt-get -qq install -y openjdk-8-jdk openjfx
-#apt-get -qq install -y oracle-java8-installer
+apt-get -qq install -y oracle-java8-installer
 javac -version
 java -version
 
@@ -74,9 +74,9 @@ apt-get -qq install -y build-essential
 gcc --version
 g++ --version
 
-#echo '---- INSTALLING C# COMPILER'
-#apt-get -qq install -y mono-complete
-#mono
+echo '---- INSTALLING C# COMPILER'
+apt-get -qq install -y mono-complete
+mono
 
 #echo '---- INSTALLING GO'
 #apt-get -qq install -y golang
@@ -146,20 +146,20 @@ chmod 644 /var/log/apache2/error.log
 chmod 755 /var/log/apache2
 sed -i 's/create 640 root adm/create 644 root adm/' /etc/logrotate.d/apache2
 
-#echo '-----------------------------------------------------------------------------------------------'
-#echo '---- INSTALLING TOMCAT JAVA WEB SERVER'
-#echo '-----------------------------------------------------------------------------------------------'
-# #some 16.04 commands for working with tomcat include
+echo '-----------------------------------------------------------------------------------------------'
+echo '---- INSTALLING TOMCAT JAVA WEB SERVER'
+echo '-----------------------------------------------------------------------------------------------'
+ #some 16.04 commands for working with tomcat include
 # #systemctl status tomcat8
 # #systemctl restart tomcat8
 
-#apt-get -qq install -y tomcat8 tomcat8-docs tomcat8-admin tomcat8-examples
+apt-get -qq install -y tomcat8 tomcat8-docs tomcat8-admin tomcat8-examples
 
-#echo '---- CONFIGURE TOMCAT'
-#echo '---- SET THE TOMCAT ADMIN USER: tomcat'
-#echo '---- SET THE TOMCAT ADMIN PASSWORD: tomcatpw'
-#echo '---- UPLOAD AND RUN JSP PROGRAMS AT BROWSER URL OF: ipaddress:8080'
-#sed -i 's/<\/tomcat-users>/  <user username="tomcat" password="mucis" roles="manager-gui,admin-gui"\/><\/tomcat-users>/' /etc/tomcat8/tomcat-users.xml
+echo '---- CONFIGURE TOMCAT'
+echo '---- SET THE TOMCAT ADMIN USER: tomcat'
+echo '---- SET THE TOMCAT ADMIN PASSWORD: tomcatpw'
+echo '---- UPLOAD AND RUN JSP PROGRAMS AT BROWSER URL OF: ipaddress:8080'
+sed -i 's/<\/tomcat-users>/  <user username="tomcat" password="mucis" roles="manager-gui,admin-gui"\/><\/tomcat-users>/' /etc/tomcat8/tomcat-users.xml
 
 # Todo -- add a nodejs server option
 
